@@ -5,10 +5,40 @@
  */
 package keplerslawsprogram;
 
+import java.awt.Point;
+
 /**
  *
  * @author charp
  */
 public abstract class DisplayedObject {
+    private Point location;
+    
+    /**
+     * Creates new DisplayedObject at the origin
+     */
+    DisplayedObject()
+    {
+        location = new Point(0, 0);
+    }
+    
+    /**
+     * Creates new DisplayedObject at set location
+     * @param lo Location of DisplayedObject
+     */
+    DisplayedObject(Point lo)
+    {
+        location = lo;
+    }
+    
+    /**
+     * Gets location of DisplayedObject
+     * @return location
+     */
+    public Point getLocation()
+    {
+        return location;
+    }
+    
     abstract void display();
 }

@@ -5,6 +5,7 @@
  */
 package keplerslawsprogram;
 
+import java.awt.Color;
 import java.awt.Point;
 
 /**
@@ -12,7 +13,21 @@ import java.awt.Point;
  * @author charp
  */
 public class Trail extends DisplayedObject {
-    Point location;
+    int diameter;
+    Color colour;
+    
+    /**
+     * Creates new Trail with set location, diameter, and colour
+     * @param lo Location of Trail
+     * @param di Diameter of trail
+     * @param co Colour of trail
+     */
+    Trail(Point lo, int di, Color co)
+    {
+        super(lo);
+        diameter = di;
+        colour = co;
+    }
     
     @Override
     public void display()

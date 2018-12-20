@@ -43,13 +43,12 @@ public class Vector {
     }
     
     /**
-     * Adds speeds of vector1 and vector2
-     * @param vector1 
-     * @param vector2
-     * @return 
+     * Adds speeds of vector1 and vector2 
+     * @param vector2 
      */
-    public static Vector addVectors(Vector vector1, Vector vector2)
+    public void addVector(Vector vector2)
     {
-        return new Vector(vector1.getVelX() + vector2.getVelX(), vector1.getVelY() + vector2.getVelY());
+        velX += vector2.getVelX();
+        velY += vector2.getVelY();
     }
 }

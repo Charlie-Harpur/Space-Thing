@@ -5,12 +5,14 @@
  */
 package keplerslawsprogram;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author charp
  */
 public class KeplersLawsProgram {
-
+    public static ArrayList<Body> Bodies = new ArrayList();
     /**
      * @param args the command line arguments
      */

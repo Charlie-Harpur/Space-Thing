@@ -32,6 +32,7 @@ public class Vector {
         this.velY = vY;
     }
     
+    
     public int getVelX()
     {
         return velX;

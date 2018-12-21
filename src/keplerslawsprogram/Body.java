@@ -6,6 +6,7 @@
 package keplerslawsprogram;
 
 import java.awt.Point;
+import static keplerslawsprogram.KeplersLawsProgram.Bodies;
 
 /**
  *
@@ -54,6 +55,21 @@ public class Body extends DisplayedObject{
     public Vector getVector()
     {
         return vector;
+    }
+    
+    public Vector getGravity(Body body2)
+    {
+        
+        return new Vector()
+    }
+    
+    public void move()
+    {
+        Vector effectOfGravity = new Vector();
+        for(Body otherBodies : Bodies)
+        {
+            
+        }
     }
     
     @Override

@@ -10,7 +10,7 @@ package keplerslawsprogram;
  * @author charp
  */
 public class Vector {
-    private int velX, velY;
+    private double velX, velY;
     
     /**
      * Creates a vector with 0 velocity on both axis
@@ -26,19 +26,19 @@ public class Vector {
      * @param vX Velocity along x axis
      * @param vY velocity along y axis
      */
-    public Vector(int vX, int vY)
+    public Vector(double vX, double vY)
     {
         this.velX = vX;
         this.velY = vY;
     }
     
     
-    public int getVelX()
+    public double getVelX()
     {
         return velX;
     }
     
-    public int getVelY()
+    public double getVelY()
     {
         return velY;
     }
@@ -47,7 +47,7 @@ public class Vector {
      * Adds speeds of vector1 and vector2 
      * @param vector2 
      */
-    public void addVector(Vector vector2)
+    public void add(Vector vector2)
     {
         velX += vector2.getVelX();
         velY += vector2.getVelY();

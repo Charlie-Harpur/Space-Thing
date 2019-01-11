@@ -5,7 +5,6 @@
  */
 package keplerslawsprogram;
 
-import java.awt.Point;
 import java.util.ArrayList;
 import static keplerslawsprogram.KeplersLawsProgram.G;
 
@@ -65,14 +64,14 @@ public class Body extends DisplayedObject{
      */
     public Vector getGravity(Body body2)
     {
-        double distanceX =getLocation().getX() - body2.getLocation().getX();
-        double distanceY = getLocation().getY() - body2.getLocation().getY();
+        double distanceX = this.getLocation().getX() - body2.getLocation().getX();
+        double distanceY = this.getLocation().getY() - body2.getLocation().getY();
         double distance = Math.sqrt((Math.pow(distanceX, 2) + Math.pow(distanceY, 2)));
         double acceleration = (G * ((this.getMass() * body2.getMass()) / distance)) * (1 / mass);
         
         double velX = (acceleration * (distanceX / distance));
         double velY = (acceleration * (distanceY / distance));
-        return new Vector(velX, velY);
+        return new Vector(-velX, -velY);
     }
     
     /**
@@ -81,11 +80,11 @@ public class Body extends DisplayedObject{
      */
     public void updateVector(ArrayList<Body> affectingBodies)
     {
-        for(Body otherBody : affectingBodies)
+        for(int i = 0; i < affectingBodies.size(); i++)
         {
-            if(otherBody != this)
+            if(affectingBodies.get(i) != this)
             {
-                vector.add(this.getGravity(otherBody));
+                vector.add(this.getGravity(affectingBodies.get(i)));
             }
         }
     }
@@ -95,7 +94,7 @@ public class Body extends DisplayedObject{
      */
     public void move()
     {
-        this.getLocation().setLocation(this.getLocation().getX() + vector.getVelX(), this.getLocation().getY() + vector.getVelY());
+        this.setLocation(new Point(this.getLocation().getX() + vector.getVelX(), this.getLocation().getY() + vector.getVelY()));
     }
     
     @Override

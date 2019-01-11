@@ -5,8 +5,6 @@
  */
 package keplerslawsprogram;
 
-import java.awt.Point;
-
 /**
  *
  * @author charp
@@ -38,6 +36,11 @@ public abstract class DisplayedObject {
     public Point getLocation()
     {
         return location;
+    }
+    
+    public void setLocation(Point point)
+    {
+        location = point;
     }
     
     abstract void display();

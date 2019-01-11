@@ -49,7 +49,7 @@ public class Vector {
      */
     public void add(Vector vector2)
     {
-        velX += vector2.getVelX();
-        velY += vector2.getVelY();
+        this.velX += vector2.getVelX();
+        this.velY += vector2.getVelY();
     }
 }

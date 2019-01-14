@@ -43,6 +43,11 @@ public class Vector {
         return velY;
     }
     
+    public double getVelocity()
+    {
+        return Math.pow(Math.pow(getVelX(), 2) + Math.pow(getVelY(), 2), -1);
+    }
+    
     /**
      * Adds speeds of vector1 and vector2 
      * @param vector2 

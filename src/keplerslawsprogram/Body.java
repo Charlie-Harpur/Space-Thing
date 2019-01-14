@@ -48,6 +48,11 @@ public class Body extends DisplayedObject{
         return mass;
     }
     
+    public double getEffectiveMass()
+    {
+        return mass;
+    }
+    
     /**
      * Gets vector of Body
      * @return vector

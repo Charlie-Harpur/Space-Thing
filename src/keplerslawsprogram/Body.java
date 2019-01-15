@@ -48,11 +48,6 @@ public class Body extends DisplayedObject{
         return mass;
     }
     
-    public double getEffectiveMass()
-    {
-        return mass;
-    }
-    
     /**
      * Gets vector of Body
      * @return vector
@@ -71,8 +66,10 @@ public class Body extends DisplayedObject{
     {
         double distanceX = this.getLocation().getX() - body2.getLocation().getX();
         double distanceY = this.getLocation().getY() - body2.getLocation().getY();
-        double distance = Math.sqrt((Math.pow(distanceX, 2) + Math.pow(distanceY, 2)));
-        double acceleration = (G * ((this.getMass() * body2.getMass()) / distance)) * (1 / mass);
+        double distance = Math.sqrt(Math.pow(distanceX, 2) + Math.pow(distanceY, 2));
+        
+        double force = G * ((this.getMass() * body2.getMass()) / Math.pow(distance, 2));
+        double acceleration = force * (9 / mass);
         
         double velX = (acceleration * (distanceX / distance));
         double velY = (acceleration * (distanceY / distance));

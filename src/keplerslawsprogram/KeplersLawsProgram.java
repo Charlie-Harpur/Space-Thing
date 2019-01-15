@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class KeplersLawsProgram {
     public static ArrayList<Body> bodies = new ArrayList();
-    final static double G = 0.00000000001;
+    final static double G = 0.000000001;
     
     /**
      * @param args the command line arguments
@@ -30,9 +30,10 @@ public class KeplersLawsProgram {
                 bodies.get(i).updateVector(bodies);
                 System.out.println(i + " Vx: " + bodies.get(i).getVector().getVelX() + "  Vy: " + bodies.get(i).getVector().getVelY());
                 System.out.println(i + " X: " + bodies.get(i).getLocation().getX() + "  Y: " + bodies.get(i).getLocation().getY());
+                
             }
             System.out.println("======================================================" + numberOfCalcs);
-            for (int physics = 0; physics < 1000000; physics++)
+            for (int physics = 0; physics < 100000; physics++)
             {
                 for(Body body : bodies)
                 {
